@@ -17,6 +17,7 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+.gradio/
 
 # Logs and caches
 *.log
