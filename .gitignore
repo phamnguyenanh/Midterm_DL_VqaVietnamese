@@ -1,0 +1,34 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and caches
+*.log
+.cache/
+
+# Data and large files
+embeddings/*.vec
+checkpoints/
+
+# Kaggle outputs
+/kaggle/working/
+
+# Local datasets (uncomment if needed)
+dataset/
+images/

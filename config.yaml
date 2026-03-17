@@ -1,0 +1,46 @@
+﻿data:
+  train_json: dataset/openvivqa_train_v2.json
+  dev_json: dataset/openvivqa_dev_v2.json
+  test_json: dataset/openvivqa_test_v2.json
+  images_dir: dataset/images
+  embeddings_path: embeddings/cc.vi.300.vec
+  vocab_path: data/vocab.json
+  max_question_len: 20
+  max_answer_len: 15
+  vocab_size: 8000
+  cache_tokenization: true
+
+model:
+  embedding_dim: 300
+  question_hidden_size: 512
+  decoder_hidden_size: 512
+  attention_dim: 512
+  cnn_out_dim: 256
+  resnet_out_dim: 2048
+
+training:
+  batch_size: 64
+  num_epochs: 20
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  grad_clip: 5.0
+  teacher_forcing_ratio: 0.5
+  teacher_forcing_min: 0.1
+  teacher_forcing_decay: 0.02
+  num_workers: 2
+  prefetch_factor: 2
+  persistent_workers: true
+  seed: 42
+  device: cuda
+  use_amp: true
+
+inference:
+  beam_width: 3
+  max_answer_len: 15
+
+checkpoints:
+  dir: checkpoints
+  cnn_baseline: checkpoints/cnn_baseline.pth
+  cnn_attention: checkpoints/cnn_attention.pth
+  resnet_baseline: checkpoints/resnet_baseline.pth
+  resnet_attention: checkpoints/resnet_attention.pth
